@@ -12,7 +12,8 @@ data <- read.csv("historic_property_data.csv")
 variables1 <- data %>% 
   select(everything()) %>% 
   summarise_all(funs(sum(is.na(.))))
-print(variables1)
+
+print(names(variables1)[variables1>10000]
 
 #Run linear regression on all variables in the data (except variables found in previous part) 
 #to test the significance of the variables
